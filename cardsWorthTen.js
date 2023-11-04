@@ -22,5 +22,14 @@ const cards = [
  * @return {string} displayVal
  */
 
+const cardsWorthTen = (cards) => {
+  const getTen = cards.filter((word) => word.val === 10);
+
+  const getDisplayVal = getTen.map((value) => `${value.displayVal}`);
+
+  //return a comma separated string of the displayVals
+  const cardString = getDisplayVal.join(", ");
+  return cardString;
+};
 console.log(cardsWorthTen(cards));
 // should return/log "10, Jack, Queen, King"
