@@ -8,29 +8,34 @@ const getDeck = () => {
   let deck = [];
   let val;
   let suit;
-
+  let displayVal;
+  // loop over suits
   for (let i = 0; i < suits.length; i++) {
     for (let j = 1; j <= 13; j++) {
       if (j >= 2 && j <= 10) {
         val = j;
-        deck.push(`${suits[i]} has a value of ${val}`);
+        suit = suits[i];
+        displayVal = j.toString();
       } else if (j === 1) {
         val = 11;
-        suit = "Ace";
-        deck.push(`${suit} of ${suits[i]} has a value of ${val}`);
+        suit = suits[i];
+        displayVal = "Ace";
       } else if (j === 11) {
         val = 10;
-        suit = "Jack";
-        deck.push(`${suit} of ${suits[i]} has a value of ${val}`);
+        suit = suits[i];
+        displayVal = "Jack";
       } else if (j === 12) {
         val = 10;
-        suit = "Queen";
-        deck.push(`${suit} of ${suits[i]} has a value of ${val}`);
+        suit = suits[i];
+        displayVal = "Queen";
       } else if (j === 13) {
         val = 10;
-        suit = "King";
-        deck.push(`${suit} of ${suits[i]} has a value of ${val}`);
+        suit = suits[i];
+        displayVal = "King";
       }
+
+      let card = { val, suit, displayVal };
+      deck.push(card);
     }
   }
   return deck;
