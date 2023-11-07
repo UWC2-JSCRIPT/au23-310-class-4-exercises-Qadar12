@@ -11,7 +11,7 @@ const cards = [
   { val: 10, displayVal: "Jack", suit: "hearts" },
   { val: 10, displayVal: "Queen", suit: "hearts" },
   { val: 10, displayVal: "King", suit: "hearts" },
-  { val: 11, displayVal: "Ace", suit: "hearts" }
+  { val: 11, displayVal: "Ace", suit: "hearts" },
 ];
 
 /**
@@ -21,7 +21,15 @@ const cards = [
  * @param {array} cards
  * @return {string} displayVal
  */
-const cardsWorthTen = cards => {};
 
+const cardsWorthTen = (cards) => {
+  const getTen = cards.filter((word) => word.val === 10);
+
+  const getDisplayVal = getTen.map((value) => `${value.displayVal}`);
+
+  //return a comma separated string of the displayVals
+  const cardString = getDisplayVal.join(", ");
+  return cardString;
+};
 console.log(cardsWorthTen(cards));
 // should return/log "10, Jack, Queen, King"
